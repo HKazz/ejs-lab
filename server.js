@@ -64,11 +64,17 @@ app.get('/menu', (req, res) => {
 })
 
 app.get('/menu/:category', (req,res) => {
-    res.render(req.params.category,{
-        menuItems: RESTAURANT.filter((element)=>{
-            return element.category == req.params.category
-        })
-    })
+  let cat = req.params.category
+  const restaurantArray = RESTAURANT.menu
+  const filteredMenu = restaurantArray.filter((element) => {
+    return element.category === cat
+  })
+    res.render('category.ejs',
+    {
+        category: cat.charAt(0).toLocaleUpperCase() + cat.slice(1),
+        menuItems: filteredMenu
+    },
+  )
 })
 
 app.listen(3000);

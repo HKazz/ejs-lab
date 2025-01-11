@@ -10,32 +10,37 @@
     <h1>Full Menu</h1>
 
     <h2>Mains</h2>
+    <ol>
     <% menuArray.forEach(element => {%>
 
         <%if(element.category ==='mains'){%>
-    <dl><%= element.name%>
-      <dt>- <%= element.price%></dt>
-      <dt>- <%= element.rating%></dt>
-      <dt>- <%= element.details%></dt>
-    </dl>
+          <li>
+            <h1><%= element.name%></h1>
+            <p>Price: $<%= element.price%></p>
+            <p>Rating: <%= element.rating%></p>
+            <p>Details: <%= element.details%></p>
+          </li>
     <%}})%>
     <h2>Desserts</h2>
     <% menuArray.forEach(element => {%>
         <%if(element.category ==='desserts'){%>
-    <dl><%= element.name%>
-      <dt>- <%= element.price%></dt>
-      <dt>- <%= element.rating%></dt>
-      <dt>- <%= element.details%></dt>
-    </dl>
+          <li>
+            <h1><%= element.name%></h1>
+            <p>Price: $<%= element.price%></p>
+            <p>Rating: <%= element.rating%></p>
+            <p>Details: <%= element.details%></p>
+          </li>
     <%}})%>
     <h2>Sides</h2>
     <% menuArray.forEach(element => {%>
         <%if(element.category ==='sides'){%>
-    <dl><%= element.name%>
-      <dt>- <%= element.price%></dt>
-      <dt>- <%= element.rating%></dt>
-      <dt>- <%= element.details%></dt>
-    </dl>
+          <li>
+            <h1><%= element.name%></h1>
+            <p>Price: $<%= element.price%></p>
+            <p>Rating: <%= element.rating%></p>
+            <p>Details: <%= element.details%></p>
+          </li>
     <%}})%>
+  </ol>
   </body>
 </html>
